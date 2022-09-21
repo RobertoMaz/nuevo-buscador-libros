@@ -9,7 +9,7 @@ function App() {
       <Store>
         <BrowserRouter>
           <Routes> 
-            <Route path="nuevo-buscador-libros/" element={<Index />} />
+            <Route path="/nuevo-buscador-libros/" element={<Index />} />
             <Route path="create" element={<Create />} />
             <Route path="view/:bookId" element={<View />} />
           </Routes>

@@ -28,16 +28,28 @@ function Store({children}) {
     }
 
     function updateItem(item) {
-        const index = items.find(item => item.id === id);
+        const index = items.findIndex(i => i.id === item.id);
+        const temp = [...items];
 
-        return item;
+        temp[index] = {...item};
     }
 
     return (
-        <AppContext.Provider>
+        <AppContext.Provider value={{
+            items,
+            createItem,
+            getItem,
+            updateItem
+        }}>
             {children}
         </AppContext.Provider>
     );
 }
 
 export default Store;
+
+export function useAppContext() {
+    
+
+    return useContext(AppContext);
+}
